@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="theme-color" content="#0D5A97" />
+  <title>Үйлчилгээ - E-Mongolia</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root" class="app">
+    <div class="shell">
+      <main class="home-screen">
+        <div style="padding: 40px 20px; text-align: center;">
+          <h1 style="color: #f5f9ff; font-size: 24px; margin: 20px 0;">Үйлчилгээ</h1>
+          <p style="color: #a8c7e8; font-size: 14px;">Үйлчилгээ хуудас эндэ байх болно</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item" onclick="window.location.href='home.html'">
+      <span class="nav-icon">🏠</span>
+      <span>Нүүр</span>
+    </button>
+    <button class="nav-item active" onclick="window.location.href='services.html'">
+      <span class="nav-icon">📋</span>
+      <span>Үйлчилгээ</span>
+    </button>
+    <button class="nav-item nav-center" aria-label="QR код">QR код</button>
+    <button class="nav-item" onclick="window.location.href='more.html'">
+      <span class="nav-icon">➕</span>
+      <span>Нэмэлт</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='profile.html'">
+      <span class="nav-icon">👤</span>
+      <span>Профайл</span>
+    </button>
+  </nav>
+
+  <script src="navigation.js"></script>
+</body>
+</html>

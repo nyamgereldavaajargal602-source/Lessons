@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramadan pen</title>
+
+  <!-- Pinned versions -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3.1675466124/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #050301;
+    }
+
+    /* Keep the video available for processing, but out of view */
+    video {
+      position: fixed;
+      left: -9999px;
+      top: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      transform: scaleX(-1);
+      z-index: 1;
+    }
+
+    #msg {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      color: #F5D061;
+      background: rgba(0, 0, 0, 0.35);
+      font: 14px/1.4 system-ui, sans-serif;
+      padding: 8px 10px;
+      border-radius: 8px;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="msg">Hold Shift to draw • Press Space to clear</div>
+  <video id="vid" playsinline autoplay muted></video>
+  <canvas id="c"></canvas>
+
+  <script>
+    const vid = document.getElementById('vid');
+    const c = document.getElementById('c');
+    const ctx = c.getContext('2d');
+    const msg = document.getElementById('msg');
+
+    let strokes = [];
+    let currentStroke = null;
+    let shiftDown = false;
+    let strokeOpen = false;
+    let sx = null;
+    let sy = null;
+
+    function resizeCanvas() {
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+    }
+
+    function resetTracking() {
+      strokeOpen = false;
+      currentStroke = null;
+      sx = null;
+      sy = null;
+    }
+
+    function clearDrawing() {
+      strokes = [];
+      currentStroke = null;
+      strokeOpen = false;
+    }
+
+    function drawStroke(points) {
+      if (!points || points.length < 2) return;
+
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(points[i].x, points[i].y);
+      }
+
+      ctx.stroke();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Shift') {
+        shiftDown = true;
+      }
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        clearDrawing();
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'Shift') {
+        shiftDown = false;
+        strokeOpen = false;
+        currentStroke = null;
+      }
+    });
+
+    window.addEventListener('blur', () => {
+      shiftDown = false;
+      resetTracking();
+    });
+
+    function run(results) {
+      ctx.clearRect(0, 0, c.width, c.height);
+      ctx.drawImage(results.image, 0, 0, c.width, c.height);
+
+      ctx.fillStyle = 'rgba(10, 6, 2, 0.85)';
+      ctx.fillRect(0, 0, c.width, c.height);
+
+      ctx.save();
+      ctx.shadowColor = '#F5D061';
+      ctx.shadowBlur = 15;
+      ctx.strokeStyle = '#F5D061';
+      ctx.lineWidth = 6;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      for (const stroke of strokes) {
+        drawStroke(stroke);
+      }
+      ctx.restore();
+
+      if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
+        resetTracking();
+        return;
+      }
+
+      const lm = results.multiHandLandmarks[0];
+
+      drawConnectors(ctx, lm, HAND_CONNECTIONS, {
+        color: 'rgba(245, 208, 97, 0.3)',
+        lineWidth: 2
+      });
+
+      drawLandmarks(ctx, lm, {
+        color: '#FFFFFF',
+        lineWidth: 1,
+        radius: 2
+      });
+
+      const ind = lm[8];
+      const rx = ind.x * c.width;
+      const ry = ind.y * c.height;
+
+      if (sx === null || sy === null) {
+        sx = rx;
+        sy = ry;
+      } else {
+        sx += (rx - sx) * 0.45;
+        sy += (ry - sy) * 0.45;
+      }
+
+      ctx.beginPath();
+      ctx.arc(sx, sy, 6, 0, Math.PI * 2);
+      ctx.fillStyle = shiftDown ? '#FFFFFF' : 'rgba(245, 208, 97, 0.4)';
+      ctx.fill();
+
+      if (!shiftDown) {
+        strokeOpen = false;
+        currentStroke = null;
+        return;
+      }
+
+      if (!strokeOpen) {
+        currentStroke = [];
+        strokes.push(currentStroke);
+        strokeOpen = true;
+      }
+
+      const lastPoint = currentStroke[currentStroke.length - 1];
+      if (!lastPoint || Math.hypot(sx - lastPoint.x, sy - lastPoint.y) > 2) {
+        currentStroke.push({ x: sx, y: sy });
+      }
+    }
+
+    const h = new Hands({
+      locateFile: (file) =>
+        `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/${file}`
+    });
+
+    h.setOptions({
+      maxNumHands: 1,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+
+    h.onResults(run);
+
+    const cam = new Camera(vid, {
+      onFrame: async () => {
+        await h.send({ image: vid });
+      },
+      width: 1280,
+      height: 720
+    });
+
+    cam.start().catch((err) => {
+      console.error(err);
+      msg.textContent =
+        'Camera failed to start. Allow camera access and run from localhost, file://, or HTTPS.';
+    });
+  </script>
+</body>
+</html>

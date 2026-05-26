@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="theme-color" content="#0D5A97" />
+  <title>E-Mongolia</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root" class="app">
+    <div class="shell">
+      <div class="screen">
+        <div class="content">
+          <div class="logo-ring">
+            <div class="logo-ring-inner">
+              <img src="icon.png" alt="E-Mongolia logo" class="logo" />
+            </div>
+          </div>
+          <div class="card">
+            <h1 class="title">Sign In</h1>
+            <label class="label label-first" for="email">Email</label>
+            <input id="email" class="input" type="email" autocomplete="email" placeholder="you@example.com" />
+            <label class="label" for="password">Password</label>
+            <input id="password" class="input" type="password" autocomplete="current-password" placeholder="Enter password" />
+            <div id="error" class="error hidden" aria-live="polite"></div>
+            <button id="submit" class="button" type="button" disabled>
+              <span class="button-text">Log In</span>
+              <span class="spinner hidden" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

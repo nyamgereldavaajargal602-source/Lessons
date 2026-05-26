@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="theme-color" content="#0D5A97" />
+  <title>E-Mongolia - Үйлчилгээ</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root" class="app">
+    <div class="shell">
+      <main class="home-screen">
+        <header class="home-header">
+          <div class="header-brand">
+            <div class="brand-logo">e</div>
+            <div>
+              <div class="brand-name">mongolia</div>
+              <div class="brand-subtitle">Цахим үйлчилгээний нэгдсэн систем</div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button-small" aria-label="Notifications">🔔</button>
+            <button class="icon-button-small" aria-label="Menu">☰</button>
+          </div>
+        </header>
+
+        <section class="home-hero">
+          <h1 class="hero-title">Төрийн үйлчилгээ, мэдээллийг нэг дороос</h1>
+          
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Үйлчилгээ хайх" />
+          </div>
+
+          <div class="quick-cards">
+            <button class="quick-card">
+              <span class="quick-icon">🌡️</span>
+              <span class="quick-text">Өдөр 7° C</span>
+            </button>
+            <button class="quick-card">
+              <span class="quick-icon">📅</span>
+              <span class="quick-text">Цагалбар</span>
+            </button>
+            <button class="quick-card">
+              <span class="quick-icon">💱</span>
+              <span class="quick-text">3,566.64 ₮</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="categories-section">
+          <div class="section-header">
+            <h2 class="section-title">Хөтөч</h2>
+            <button class="section-link">Бүгд ›</button>
+          </div>
+          
+          <div class="categories-grid">
+            <button class="category-card">
+              <span class="category-icon">⚔️</span>
+              <span class="category-label">Цэргийн алба</span>
+            </button>
+            <button class="category-card">
+              <span class="category-icon">📋</span>
+              <span class="category-label">Бичиг баримт</span>
+            </button>
+            <button class="category-card">
+              <span class="category-icon">👶</span>
+              <span class="category-label">Хүүхэд</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="featured-section">
+          <div class="featured-card">
+            <div class="featured-icon">💊</div>
+            <div class="featured-content">
+              <div class="featured-title">Эмийн үнийн ил тод байдал</div>
+              <button class="featured-action">Мэдээлэл авах</button>
+            </div>
+          </div>
+
+          <div class="featured-card">
+            <div class="featured-icon">💼</div>
+            <div class="featured-content">
+              <div class="featured-title">20,000+ нээлттэй ажлын байр</div>
+              <button class="featured-action">Үйлчилгээ авах</button>
+            </div>
+          </div>
+
+          <div class="featured-card">
+            <div class="featured-icon">💰</div>
+            <div class="featured-content">
+              <div class="featured-title">Чингис хаан хуримтлалын сан</div>
+              <div class="featured-value">1,103.8 тэрбум төгрөг</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="open-data-section">
+          <h2 class="section-title">Нээлттэй мэдээлэл</h2>
+          
+          <div class="open-data-grid">
+            <div class="stat-card">
+              <div class="stat-icon">👥</div>
+              <div class="stat-label">Хүн амын тоо</div>
+              <div class="stat-value">3,544,835</div>
+              <div class="stat-flag">🇲🇳</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">📊</div>
+              <div class="stat-label">Ажилгүйдлийн түвшин</div>
+              <div class="stat-value">5.6 %</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">👨‍💼</div>
+              <div class="stat-label">Ажиллах хүчний оролцоо</div>
+              <div class="stat-value">62.3 %</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">🐑</div>
+              <div class="stat-label">Малын тоо</div>
+              <div class="stat-value">58.1 сая</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">💵</div>
+              <div class="stat-label">Дундаж цалин</div>
+              <div class="stat-value">2.3 сая</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">🏠</div>
+              <div class="stat-label">Өрхийн дундаж орлого</div>
+              <div class="stat-value">3.0 сая</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="window.location.href='home.html'">
+      <span class="nav-icon">🏠</span>
+      <span>Нүүр</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='services.html'">
+      <span class="nav-icon">📋</span>
+      <span>Үйлчилгээ</span>
+    </button>
+    <button class="nav-item nav-center" aria-label="QR код">QR код</button>
+    <button class="nav-item" onclick="window.location.href='more.html'">
+      <span class="nav-icon">➕</span>
+      <span>Нэмэлт</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='profile.html'">
+      <span class="nav-icon">👤</span>
+      <span>Профайл</span>
+    </button>
+  </nav>
+
+  <script src="navigation.js"></script>
+</body>
+</html>

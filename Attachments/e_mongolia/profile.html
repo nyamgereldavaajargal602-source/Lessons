@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="theme-color" content="#0D5A97" />
+  <title>Profile - E-Mongolia</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root" class="app">
+    <div class="shell">
+      <main class="profile-screen">
+        <section class="account-card card">
+          <div class="account-top">
+            <div>
+              <div class="account-name">Н.Даваажаргал</div>
+              <div class="account-email">100501011793@e-mongolia.mn</div>
+            </div>
+            <button id="signOut" class="icon-button" aria-label="Sign out">›</button>
+          </div>
+          <div class="account-summary">
+            <span>Та нийт 44 үйлчилгээ авч дараах хэмнэлтийг хийсэн байна</span>
+            <span class="summary-chevron">⌄</span>
+          </div>
+        </section>
+
+        <section class="documents-section">
+          <div class="section-heading">
+            <h1 class="section-title">Миний бичиг баримтууд</h1>
+            <button class="secondary-button small">Шинэчлэх</button>
+          </div>
+
+          <div class="documents-carousel">
+            <article class="doc-card doc-card-primary">
+              <div class="doc-flag">
+                <span class="flag-label">МОНГОЛ УЛСЫН ИРГЭНИЙ ҮНЭМЛЭХ</span>
+                <span class="flag-subtitle">CITIZEN IDENTITY CARD OF MONGOLIA</span>
+              </div>
+              <div class="doc-card-body">
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Овог Family name</span>
+                  <span class="doc-detail-value">Боржигон</span>
+                </div>
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Эцэг / эх /-ийн нэр Surname</span>
+                  <span class="doc-detail-value">Нямгэрэл</span>
+                </div>
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Нэр Given name</span>
+                  <span class="doc-detail-value">Даваажаргал</span>
+                </div>
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Хүйс Sex</span>
+                  <span class="doc-detail-value">Эрэгтэй</span>
+                </div>
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Төрсөн он, сар, өдөр Date of birth</span>
+                  <span class="doc-detail-value">2001/07/18</span>
+                </div>
+                <div class="doc-detail-row">
+                  <span class="doc-detail-label">Иргэний бүртгэлийн дугаар Civil identification number</span>
+                  <span class="doc-detail-value">100501011793</span>
+                </div>
+              </div>
+            </article>
+            <article class="doc-card doc-card-side">
+              <div class="doc-card-side-inner">
+                <div class="doc-side-title">ID карт</div>
+                <div class="doc-side-text">Өөрийн мэдээллийг хялбар шалгана</div>
+              </div>
+            </article>
+            <article class="doc-card doc-card-side">
+              <div class="doc-card-side-inner">
+                <div class="doc-side-title">QR код</div>
+                <div class="doc-side-text">Цахим баримт бичгийг хурдан хуваалцах</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="view-all">
+            <button class="secondary-button wide">Бүх бичгийг харах</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>Нүүр</span>
+    </button>
+    <button class="nav-item">
+      <span class="nav-icon">📄</span>
+      <span>Үйлчилгээ</span>
+    </button>
+  <nav class="bottom-nav">
+    <button class="nav-item" onclick="window.location.href='home.html'">
+      <span class="nav-icon">🏠</span>
+      <span>Нүүр</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='services.html'">
+      <span class="nav-icon">📋</span>
+      <span>Үйлчилгээ</span>
+    </button>
+    <button class="nav-item nav-center" aria-label="QR код">QR код</button>
+    <button class="nav-item" onclick="window.location.href='more.html'">
+      <span class="nav-icon">➕</span>
+      <span>Нэмэлт</span>
+    </button>
+    <button class="nav-item active" onclick="window.location.href='profile.html'">
+      <span class="nav-icon">👤</span>
+      <span>Профайл</span>
+    </button>
+  </nav>
+
+  <script src="profile.js"></script>
+  <script src="navigation.js"></script>
+</body>
+</html>

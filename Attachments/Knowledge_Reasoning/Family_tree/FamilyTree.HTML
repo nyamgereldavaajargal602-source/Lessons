@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ургийн мод</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f8fb;
+      color: #222;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    h1 {
+      text-align: center;
+      margin: 0 0 28px;
+      font-size: 32px;
+    }
+    .tree {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+    .section-title {
+      font-size: 20px;
+      margin: 24px 0 10px;
+      color: #333;
+    }
+    .tree ul {
+      padding-top: 20px;
+      position: relative;
+      padding-left: 36px;
+      margin: 0;
+    }
+    .tree li {
+      list-style-type: none;
+      position: relative;
+      padding: 12px 0 0 20px;
+      margin: 0;
+    }
+    .tree li::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 2px solid #9aa4b2;
+      height: 100%;
+    }
+    .tree li::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 20px;
+      border-top: 2px solid #9aa4b2;
+    }
+    .tree li:last-child::before {
+      height: 24px;
+    }
+    .node {
+      display: inline-block;
+      padding: 9px 14px;
+      background: #ffffff;
+      border: 1px solid #cfd8e3;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .muted {
+      color: #5f6b7a;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Ургийн мод</h1>
+
+    <div class="tree">
+      <div class="section-title"></div>
+      <ul>
+        <li>
+          <span class="node">bat -- dulam</span>
+          <ul>
+            <li>
+              <span class="node">gombosvren -- burmaa</span>
+              <ul>
+                <li>
+                  <span class="node">otgonbileg -- gerelchuluun</span>
+                  <ul>
+                    <li>
+                      <span class="node">ganerdene -- enkhjin</span>
+                      <ul>
+                        <li><span class="node">gvnbileg</span></li>
+                      </ul>
+                    </li>
+                    <li><span class="node">gantuya</span></li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="node">ulziidvvren -- enhtur</span>
+                  <ul>
+                    <li>
+                      <span class="node">ariunzaya -- enhbayr</span>
+                      <ul>
+                        <li><span class="node">maral</span></li>
+                        <li><span class="node">togtuun</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="section-title"></div>
+      <ul>
+        <li>
+          <span class="node">ocir -- tvwshin</span>
+          <ul>
+            <li>
+              <span class="node">sanjaa -- saruul</span>
+              <ul>
+                <li><span class="node">jadamba</span></li>
+                <li><span class="node">amingoo</span></li>
+                <li><span class="node">suwd</span></li>
+              </ul>
+            </li>
+            <li>
+              <span class="node">manal</span>
+              <ul>
+                <li><span class="node">margad</span></li>
+                <li><span class="node">namsrai</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="muted">HTML family tree file</div>
+    </div>
+  </div>
+</body>
+</html>

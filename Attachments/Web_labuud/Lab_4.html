@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лаборатори 4 - Веб зохиомж</title>
+    <style type='text/css'>
+        header
+        {
+            background-color: rgb(202, 151, 57);
+            padding: 1px;
+        }
+        footer
+        {
+            background-color: rgb(4, 255, 0);
+            padding: 1px;
+        }
+        section
+        {
+            display: flex;
+            width: 100%;
+            height: 400px;
+        }
+        .mainbar
+        {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background-color: rgb(101, 77, 123);
+            width: 30%;
+            height: 100%; 
+        }
+        .sidebar
+        {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background-color: rgb(200, 255, 0);
+            width: 40%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Дуу тоглуулах</h2>
+            <audio width="360" height="240" controls autoplay muted>
+            <source src="/mp3" type="audio/mp3">
+            Таны хөтөч аудио тоглуулах боломжгүй байна.
+        </audio>
+    </header>
+    <section>
+    <div class="mainbar">
+        <article>
+        <h2>Видео тоглуулах</h2>
+            <video width="300" height="240" controls autoplay muted>
+                <source src="C:\Program Files\Notepad++\mp4.mp4" type="video/mp4">
+                Таны хөтөч видео тоглуулах боломжгүй байна.
+            </video>
+        </article>
+    </div>
+    <div class="mainbar">
+        <figure>
+        <h2>Canvas зураг</h2>
+            <canvas id="tutorial" width="300" height="200"></canvas>
+            <script>
+            const canvas = document.getElementById('tutorial');
+            if(canvas.getContext)
+           {
+                const ctx = canvas.getContext('2d'); 
+
+                 // Sky Background
+                ctx.fillStyle = "lightblue";
+                ctx.fillRect(0, 0, 300, 200);
+
+                // Sun
+                ctx.fillStyle = "yellow";
+                ctx.beginPath();
+                ctx.arc(50, 40, 20, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Moon (Crescent)
+                ctx.fillStyle = "lightgray";
+                ctx.beginPath();
+                ctx.arc(250, 40, 15, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = "lightblue";
+                ctx.beginPath();
+                ctx.arc(255, 40, 13, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Stars
+                ctx.fillStyle = "white";
+                let stars =
+                [
+                [50, 15], [80, 20], [110, 15], [140, 25], [170, 10], 
+                [200, 35], [230, 20], [260, 40], [270, 30], [290, 10]
+                ];
+                stars.forEach(([x, y]) =>
+                {
+                ctx.beginPath();
+                ctx.arc(x, y, 1, 0, Math.PI * 2);
+                ctx.fill();
+                });
+
+                // Clouds
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.ellipse(80, 40, 25, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(100, 40, 20, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(180, 35, 20, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(200, 35, 20, 10, 0, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Mountains
+                ctx.fillStyle = "gray";
+                ctx.beginPath();
+                ctx.moveTo(20, 150);
+                ctx.lineTo(100, 70);
+                ctx.lineTo(180, 150);
+                ctx.fill();
+        
+                ctx.fillStyle = "darkgray";
+                ctx.beginPath();
+                ctx.moveTo(100, 150);
+                ctx.lineTo(180, 80);
+                ctx.lineTo(260, 150);
+                ctx.fill();
+
+                // Ground
+                ctx.fillStyle = "green";
+                ctx.fillRect(0, 150, 300, 50);
+
+                // House
+                ctx.fillStyle = "brown";
+                ctx.fillRect(180, 120, 50, 40);
+                ctx.fillStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(180, 120);
+                ctx.lineTo(230, 120);
+                ctx.lineTo(205, 90);
+                ctx.fill();
+                ctx.fillStyle = "black";
+                ctx.fillRect(195, 135, 15, 25);
+    
+                // Car 
+                ctx.fillStyle = "blue";
+                ctx.fillRect(50, 130, 40, 15);
+                ctx.beginPath();
+                ctx.arc(55, 150, 5, 0, Math.PI * 2, false); 
+                ctx.arc(85, 150, 5, 0, Math.PI * 2, false); 
+                ctx.fillStyle = "black";
+                ctx.fill();
+            }
+
+            else
+            {
+                //canvas-г дэмжихгүй байна
+            }
+            </script>
+        </figure>    
+    </div>
+    <div class="sidebar">
+    <nav>
+        <h2>SVG зураг</h2>
+        <svg version="1.1" width="300" height="200" style="background: lightblue;">
+            <!-- Sun -->
+            <circle cx="50" cy="40" r="20" fill="yellow" />
+            <!-- Moon (Crescent) -->
+            <circle cx="250" cy="40" r="15" fill="lightgray" />
+            <circle cx="255" cy="40" r="13" fill="lightblue" />
+            <!-- Stars -->
+            <circle cx="50" cy="15" r="1" fill="white" />
+            <circle cx="80" cy="20" r="1" fill="white" />
+            <circle cx="110" cy="15" r="1" fill="white" />
+            <circle cx="140" cy="25" r="1" fill="white" />
+            <circle cx="170" cy="10" r="1" fill="white" />
+            <circle cx="200" cy="35" r="1" fill="white" />
+            <circle cx="230" cy="20" r="1" fill="white" />
+            <circle cx="260" cy="40" r="1" fill="white" />
+            <circle cx="270" cy="30" r="1" fill="white" />
+            <circle cx="290" cy="10" r="1" fill="white" />    
+            <!-- Clouds -->
+            <ellipse cx="80" cy="40" rx="25" ry="10" fill="white" />
+            <ellipse cx="100" cy="40" rx="20" ry="10" fill="white" />
+            <ellipse cx="190" cy="35" rx="25" ry="10" fill="white" />
+            <ellipse cx="210" cy="35" rx="20" ry="10" fill="white" />                
+            <!-- Mountains -->
+            <polygon points="20,150 100,70 180,150" fill="gray" />
+            <polygon points="100,150 180,80 260,150" fill="darkgray" />                
+            <!-- Ground -->
+            <rect x="0" y="150" width="300" height="50" fill="green" />            
+            <!-- House -->
+            <rect x="180" y="120" width="50" height="40" fill="brown" />
+            <polygon points="180,120 230,120 205,90" fill="red" />
+            <rect x="195" y="135" width="15" height="25" fill="black" />
+            <!-- Car -->
+            <rect x="50" y="130" width="40" height="15" fill="blue" />
+            <circle cx="55" cy="150" r="5" fill="black" />
+            <circle cx="85" cy="150" r="5" fill="black" />
+        </svg>
+    </nav>
+    </div>
+    </section>
+
+    <footer>
+        <p align="center">Веб зохиомж - Лаборатори 4</p>
+    </footer>
+
+</body>
+</html>

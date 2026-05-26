@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=vbttXkugI6U      /lab4 CSS хэлбэрийн тухай, түүний хэрэглээ
+https://www.youtube.com/watch?v=RANaUofNqEk      /lab5 CSS3 сүүдэр, хүрээ, хөдөлгөөн, анимэйшн
+https://www.youtube.com/watch?v=WLErkYPhlcE	 /lab6 CSS3 сүүдэр, хүрээ, хөдөлгөөн, анимэйшн
+https://www.youtube.com/watch?v=etcYAKFxWrU	 /lab7 Респонсив хуудас
+https://www.youtube.com/watch?v=mIgHAj7jjLk	 /lab8 Жаваскриптийн тухай, зарлалт, оператор, нөхцөл шалгах, давталт

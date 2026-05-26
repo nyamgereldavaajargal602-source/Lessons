@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="theme-color" content="#0D5A97" />
+  <title>Нэмэлт - E-Mongolia</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root" class="app">
+    <div class="shell">
+      <main class="more-screen">
+        <header class="home-header">
+          <div class="header-brand">
+            <div class="brand-logo">e</div>
+            <div>
+              <div class="brand-name">mongolia</div>
+              <div class="brand-subtitle">Цахим үйлчилгээний нэгдсэн систем</div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button-small" aria-label="Notifications">🔔</button>
+            <button class="icon-button-small" aria-label="Menu">☰</button>
+          </div>
+        </header>
+
+        <section class="more-menu-grid">
+          <button class="more-menu-item">
+            <div class="more-menu-icon">🏢</div>
+            <div class="more-menu-label">Төрийн албан<br/>хаагчийн цэс</div>
+          </button>
+
+          <button class="more-menu-item">
+            <div class="more-menu-icon">🎓</div>
+            <div class="more-menu-label">Оюутан</div>
+          </button>
+
+          <button class="more-menu-item">
+            <div class="more-menu-icon">💼</div>
+            <div class="more-menu-label">Ажлын байр</div>
+          </button>
+
+          <button class="more-menu-item">
+            <div class="more-menu-icon">🚌</div>
+            <div class="more-menu-label">Нийтийн тээврийн<br/>тасалбар захиалга</div>
+          </button>
+
+          <button class="more-menu-item">
+            <div class="more-menu-icon">☎️</div>
+            <div class="more-menu-label">11-11 төвд өргөдөл,<br/>гомдол илгээх</div>
+          </button>
+
+          <button class="more-menu-item">
+            <div class="more-menu-icon">🛡️</div>
+            <div class="more-menu-label">АТГ-т хандах</div>
+          </button>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item" onclick="window.location.href='home.html'">
+      <span class="nav-icon">🏠</span>
+      <span>Нүүр</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='services.html'">
+      <span class="nav-icon">📋</span>
+      <span>Үйлчилгээ</span>
+    </button>
+    <button class="nav-item nav-center" aria-label="QR код">QR код</button>
+    <button class="nav-item active" onclick="window.location.href='more.html'">
+      <span class="nav-icon">➕</span>
+      <span>Нэмэлт</span>
+    </button>
+    <button class="nav-item" onclick="window.location.href='profile.html'">
+      <span class="nav-icon">👤</span>
+      <span>Профайл</span>
+    </button>
+  </nav>
+
+  <script src="navigation.js"></script>
+</body>
+</html>
