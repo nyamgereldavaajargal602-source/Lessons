@@ -1,0 +1,78 @@
+DS061201 BS 125 Day Software engineering
+29 6
+30 6
+30 16
+4 5
+U.MT101  none gen comp 3 fall Math 1
+U.MT102 U.MT101 gen comp 3 spring Math 2
+U.PH101 none gen comp 3 fall Physics 1
+U.CE102 none gen comp 3 spring Communication english
+U.SS102 none gen comp 3 spring History of Mongolia
+U.ML103 none gen comp 3 fall Mongolia language culture
+F.CS101 none gen comp 3 fall Introduction to programming
+F.CS102 none gen comp 2 any Major orientation
+F.CN104 none gen comp 3 fall Engineering economics
+F.EE101 none gen comp 3 spring Introduction to electronics
+U.SS101 none gen elec 3 any Philosophy
+U.SS103 none gen elec 2 any Fundamentals of political science
+U.SS113 none gen elec 3 any Basics of psychology
+U.SS114 none gen elec 3 any Basics of sociology
+U.CD101 none gen elec 1 any Disaster management
+U.EG101 none gen elec 3 any Ecological and environmental protection
+U.SS109 none gen elec 2 any Basics of cultural studies
+U.SS115 none gen elec 3 any Human development
+U.PT101 none gen elec 2 fall Physical education
+U.FL171 none gen elec 3 any Japanese
+U.RL101 none gen elec 3 any Russian language I
+U.CT101 none gen elec 3 any General chemistry
+U.ED101 none gen elec 3 any Descriptive Geometry
+U.PH102 U.PH101 gen elec 3 any Physics 2
+U.PH104 none gen elec 3 any Fundamentals of nanoscience
+F.CS100 none gen elec 3 any Basics of algorithms
+F.IT103 none gen elec 3 any Basics of programming language
+F.NS102 none gen elec 3 any Basics of computer networking and security
+F.CS202 F.CS101 core comp 3 spring Object-oriented programming
+F.CS203 F.CS202 core comp 3 fall Data structure and algorithms
+F.CS204 U.MT101 core comp 3 spring Discrete structure
+F.CS211 F.CS202 core comp 3 fall Basics of software engineering
+F.EE202 none core comp 3 spring Digital electronics
+F.EE281 F.EE202 core comp 3 fall Microprocessor system
+F.IT202 none core comp 3 fall Web design
+F.IT207 F.CS202 core comp 3 spring Human-computer interaction
+F.IT231 F.CS202 core comp 3 spring Database design
+U.MT201 U.MT102 core comp 3 spring Probability theory and mathematical statistics
+F.CS209 F.CS202 core elec 3 fall Computer graphics
+F.IT203 F.CS202 core elec 3 spring Visual programming
+F.NS204 U.CE102 core elec 3 any Computer networks 1
+F.NS205 F.NS204 core elec 3 any Computer networks 2
+U.ED203 none core elec 3 any Engineering drawing
+U.ES210 none core elec 3 any Science and Technology English
+U.MT202 U.MT102 core elec 3 any Ordinary differential equations
+U.MT210 U.MT102 core elec 3 any Theory of optimization
+F.CS301 F.CS202 pro comp 3 fall Operating system
+F.CS306 F.CS301 pro comp 3 spring Parallel programming
+F.CS311 F.CS211 pro comp 3 any Software development
+F.CS312 F.CS211 pro comp 3 fall Software requirements and analysis
+F.CS313 F.CS211 pro comp 3 fall Software quality assurance and testing
+F.CS314 F.CS211 pro comp 3 spring Software design and architecture
+F.CS315 F.CS313 pro comp 3 spring Software project management
+F.CS316 F.CS311 pro comp 3 fall Software development process
+F.CS319 F.CS314 pro comp 3 any Software engineering project
+F.IT237 F.IT231 pro comp 3 fall Database management
+F.CS303 F.CS202 pro elec 3 spring Introduction to AI
+F.CS305 F.CS202 pro elec 3 spring Principles of programming language
+F.CS317 F.CS202 pro elec 3 fall Mobile programming
+F.CS322 F.CS209 pro elec 3 fall Computer vision
+F.CS329 F.IT231 pro elec 3 fall GIS programming
+F.IT301 F.CS202 pro elec 3 any Web system's technology
+F.IT302 F.NS204 pro elec 3 spring System and network management
+F.IT312 none pro elec 2 any Computer ethics and law
+F.IT336 F.CS312 pro elec 3 spring Enterprise architecture
+F.EE312 F.CS101 pro elec 2 any Embedded C programming
+F.EE304 F.EE202 pro elec 3 any Computer architecture and assembly language
+U.EP310 U.ES210 pro elec 2 any Professional English
+F.NS305 F.CS202 pro elec 3 spring Network programming
+F.NS356 F.CS203 pro elec 2 spring Database security
+F.CS210 F.CS202 intern comp 2 summer Programming practice
+F.CS310 F.CS314 intern comp 2 summer Software engineering internship
+F.CS330 F.CS319 project comp 5 any Bachelor's thesis
